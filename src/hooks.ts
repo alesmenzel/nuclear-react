@@ -29,7 +29,7 @@ export type ValueFn<Value> = () => Value;
  * }
  * ```
  */
-export function useAtom<Value>(atom: IAtom<Value> | ValueFn<IAtom<Value>>): IAtom<Value> {
+export function useAtom<Value, Atom extends IAtom<Value>>(atom: Atom | ValueFn<Atom>): Atom {
   const [newAtom] = useState(() => (isSetFn(atom) ? atom() : atom));
   useDebugValue(() => newAtom.value);
   const [, setValue] = useState(newAtom.value);
