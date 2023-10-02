@@ -1,6 +1,6 @@
 {
   "name": "@alesmenzel/nuclear-react",
-  "version": "1.0.1",
+  "version": "2.0.0-alpha.0",
   "description": "Nuclear react bindings.",
   "license": "MIT",
   "main": "./dist/nuclear-react.js",
