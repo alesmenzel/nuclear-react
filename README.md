@@ -14,20 +14,20 @@ See [`@alesmenzel/nuclear-core` documentation](https://github.com/alesmenzel/nuc
 
 #### useAtom
 
-Hook `useAtom` is used to subscribe React component to the atom's state. Whenever the atom's value changes, the  subscribed React components will re-render as well.
+Hook `useAtom` is used to subscribe React component to the atom's state. Whenever the atom's value changes, the subscribed React components will re-render as well.
 
 ```tsx
-import { atom } from '@alesmenzel/nuclear-core'
-import { useAtom } from '@alesmenzel/nuclear-react'
+import { atom } from '@alesmenzel/nuclear-core';
+import { useAtom } from '@alesmenzel/nuclear-react';
 
 const Counter = () => {
-  const countAtom = useAtom(() => atom(100))
+  const [count, setCount, countAtom] = useAtom(() => atom(100));
 
   return (
     <div>
-      <pre>{countAtom.value}</pre>
-      <button onClick={() => countAtom.set(count => count + 1)}>Increment by 1</button>
+      <pre>{count}</pre>
+      <button onClick={() => setCount((count) => count + 1)}>Increment by 1</button>
     </div>
-  )
-}
+  );
+};
 ```

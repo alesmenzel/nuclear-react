@@ -30,7 +30,7 @@ export function useAtom<Value>(
   const [newAtom] = useState(() => (isSetFn(atom) ? atom() : atom));
   useDebugValue(() => newAtom.value);
 
-  useSyncExternalStore(newAtom.subscribe, newAtom.get);
+  const snapshot = useSyncExternalStore(newAtom.subscribe, newAtom.get);
 
-  return [newAtom.value, newAtom.set, newAtom];
+  return [snapshot, newAtom.set, newAtom];
 }
