@@ -34,6 +34,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'import/prefer-default-export': 'off',
     'no-underscore-dangle': 'off',
     'no-shadow': 'off',
     'no-param-reassign': 'off',
