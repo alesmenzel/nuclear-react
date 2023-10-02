@@ -22,7 +22,10 @@ export default [
     external: ['react', 'react-dom', '@alesmenzel/nuclear-core'],
     plugins: [
       resolve({ extensions: EXTENSIONS }),
-      typescript({ tsconfig: path.resolve(__dirname, 'tsconfig.json') }),
+      typescript({
+        tsconfig: path.resolve(__dirname, 'tsconfig.json'),
+        exclude: ['**/*.test.ts', '**/*.test.tsx'],
+      }),
       commonjs({ include: 'node_modules/**' }),
       terser(),
       progress(),
